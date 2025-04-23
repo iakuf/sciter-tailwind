@@ -143,6 +143,14 @@
 -   样式通过`@mixin`调用应用，而不是HTML类。
 -   参数化mixin(例如`@p(size)`)提供了灵活性。
 
+## 示例截图
+
+![Demo 1](demo_1_cn.png)
+![Demo 2](demo_2_cn.png)
+![Demo 3](demo_3_cn.png)
+![Demo 4](demo_4_cn.png)
+![Demo 5](demo_5_cn.png)
+
 ## 贡献
 
 欢迎贡献、问题和功能请求！

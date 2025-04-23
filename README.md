@@ -2,7 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-A lightweight utility-first CSS library inspired by [Tailwind CSS](https://tailwindcss.com/), specifically designed for [Sciter.js](https://sciter.com/). It leverages Sciter's powerful `@mixin` feature to provide reusable styling components directly within your CSS or inline styles.
+A lightweight utility-first CSS library inspired by [Tailwind CSS](https://tailwindcss.com/), specifically designed for [Sciter.js](https://sciter.com/). It leverages Sciter's powerful `@mixin` feature to provide reusable styling components directly within your CSS or inline styles. ![中文文档地址](sciter-tailwind-demo_zh.htm)
 
 ## Why Sciter Tailwind?
 
@@ -150,3 +150,12 @@ Contributions, issues, and feature requests are welcome!
 ## License
 
 [MIT](https://opensource.org/licenses/MIT)
+
+
+## 示例截图
+
+![Demo 1](demo_1_en.png)
+![Demo 2](demo_2_en.png)
+![Demo 3](demo_3_en.png)
+![Demo 4](demo_4_en.png)
+![Demo 5](demo_5_en.png)
