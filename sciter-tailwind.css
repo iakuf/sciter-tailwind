@@ -1,0 +1,376 @@
+/**
+ * Sciter-Tailwind CSS
+ * 一个受Tailwind CSS启发的轻量级工具类库，专为Sciter.js设计
+ * 利用Sciter的@mixin功能实现可复用样式组件
+ */
+
+/* ===== 全局设置 ===== */
+* {
+  box-sizing: border-box;
+}
+
+/* ===== 颜色变量 ===== */
+@const transparent: transparent;
+@const white: #ffffff;
+@const black: #000000;
+
+/* 灰色系列 */
+@const gray-100: #f7fafc;
+@const gray-200: #edf2f7;
+@const gray-300: #e2e8f0;
+@const gray-400: #cbd5e0;
+@const gray-500: #a0aec0;
+@const gray-600: #718096;
+@const gray-700: #4a5568;
+@const gray-800: #2d3748;
+@const gray-900: #1a202c;
+
+/* 红色系列 */
+@const red-500: #f56565;
+@const red-600: #e53e3e;
+@const red-700: #c53030;
+
+/* 绿色系列 */
+@const green-500: #48bb78;
+@const green-600: #38a169;
+@const green-700: #2f855a;
+
+/* 蓝色系列 */
+@const blue-500: #4299e1;
+@const blue-600: #3182ce;
+@const blue-700: #2b6cb0;
+
+
+/* ===== 字体大小变量 ===== */
+@const  sm: 0.875em;
+@const  base: 1em;
+@const  lg: 1.125em;
+@const  xl: 1.25em;
+
+
+
+/* ===== 布局 Mixins ===== */
+
+/* Flex 布局 */
+@mixin flex {
+  display: flex;
+}
+
+@mixin flex-row {
+  flow: horizontal;
+}
+
+@mixin flex-col {
+  flow: vertical;
+}
+
+@mixin flex-wrap {
+  flow: horizontal-wrap;
+}
+
+@mixin items-start {
+  vertical-align: top;
+  content-vertical-align: top;
+}
+
+@mixin items-center {
+  vertical-align: middle;
+  content-vertical-align: middle;
+}
+
+@mixin items-end {
+  vertical-align: bottom;
+}
+
+/* 居中对齐 */
+@mixin justify-center {
+  content-horizontal-align: center;
+  horizontal-align: center;
+}
+
+/* 左对齐 */
+@mixin justify-start {
+  direction:start;
+  content-horizontal-align: left;
+}
+
+/* 右对齐 */
+@mixin justify-end {
+  content-horizontal-align: right;
+  horizontal-align: right;
+}
+
+/* 俩端对齐 */
+@mixin justify-between {
+  
+  border-spacing: *;
+}
+
+/* Grid 布局 */
+@mixin grid {
+  flow: grid;
+  display: block;
+}
+
+/* 处理grid-template-columns属性 */
+@mixin grid-template-columns(columns) {
+  flow-columns: @columns;
+}
+
+/* 处理grid-gap属性 */
+@mixin grid-gap(gap) {
+  border-spacing: @gap;
+}
+/* Margin */
+@mixin m(size) {
+  margin: @size;
+}
+
+@mixin mx(size) {
+  margin-left: @size;
+  margin-right: @size;
+}
+
+@mixin my(size) {
+  margin-top: @size;
+  margin-bottom: @size;
+}
+
+@mixin mt(size) {
+  margin-top: @size;
+}
+
+@mixin mr(size) {
+  margin-right: @size;
+}
+
+@mixin mb(size) {
+  margin-bottom: @size;
+}
+
+@mixin ml(size) {
+  margin-left: @size;
+}
+
+/* Padding */
+@mixin p(size) {
+  padding: @size;
+}
+
+@mixin px(size) {
+  padding-left: @size;
+  padding-right: @size;
+}
+
+@mixin py(size) {
+  padding-top: @size;
+  padding-bottom: @size;
+}
+
+@mixin pt(size) {
+  padding-top: @size;
+}
+
+@mixin pr(size) {
+  padding-right: @size;
+}
+
+@mixin pb(size) {
+  padding-bottom: @size;
+}
+
+@mixin pl(size) {
+  padding-left: @size;
+}
+
+/* ===== 尺寸 Mixins ===== */
+@mixin w(size) {
+  width: @size;
+}
+
+@mixin h(size) {
+  height: @size;
+}
+
+@mixin min-w(size) {
+  min-width: @size;
+}
+
+@mixin min-h(size) {
+  min-height: @size;
+}
+
+@mixin max-w(size) {
+  max-width: @size;
+}
+
+@mixin max-h(size) {
+  max-height: @size;
+}
+
+/* 常用宽度 */
+@mixin w-full {
+  width: 100%;
+}
+
+@mixin h-full {
+  height: 100%;
+}
+
+/* ===== 文本 Mixins ===== */
+@mixin text(size) {
+  font-size: @size;
+}
+
+@mixin text-xl {
+  font-size: 1.5em;
+}
+@mixin  text-2xl {
+  font-size: 1.875em;
+}
+@mixin  text-3xl {
+  font-size: 2.25em;
+}
+@mixin  text-4xl {
+  font-size: 3em;
+} 
+
+
+@mixin font-bold {
+  font-weight: bold;
+}
+
+@mixin font-normal {
+  font-weight: normal;
+}
+
+@mixin text-left {
+  text-align: left;
+}
+
+@mixin text-center {
+  text-align: center;
+}
+
+@mixin text-right {
+  text-align: right;
+}
+
+@mixin text-color(color) {
+  color: @color;
+}
+
+@mixin truncate {
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ===== 背景 Mixins ===== */
+@mixin bg-color(color) {
+  background-color: @color;
+}
+
+/* ===== 边框 Mixins ===== */
+@mixin rounded(size) {
+  border-radius: @size;
+}
+
+@mixin rounded-full {
+  border-radius: 9999px;
+}
+
+@mixin border(width, color) {
+  border: @width solid @color;
+}
+
+/* ===== 阴影 Mixins ===== */
+@mixin shadow-sm {
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+@mixin shadow {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+@mixin shadow-md {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+@mixin shadow-lg {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* ===== 交互 Mixins ===== */
+@mixin hover-opacity {
+  /* :hover {
+    opacity: 0.8;
+  } */
+}
+
+/* ===== 常用组件 Mixins ===== */
+
+/* 按钮 */
+@mixin btn(bg-color, text-color) {
+  background-color: @bg-color;
+  color: @text-color;
+  border-radius: 0.25em;
+  content-vertical-align: middle;
+  text-align: center;
+  width: max-content;
+  font-size: 1em;
+  cursor: pointer;
+  behavior: button;
+
+  /*
+   background: linear-gradient(top, tint(@bg-color,+0.3), @bg-color, tint(@bg-color,-0.4));
+   :hover {
+    background: linear-gradient(top, tint(@bg-color,+0.5), tint(@bg-color,+0.25), @bg-color);
+  } */
+}
+
+/* 卡片 */
+@mixin card {
+  background-color: white;
+  border-radius: 0.25em;
+  padding: 1em;
+  @shadow;
+}
+
+/* ===== 响应式设计 ===== */
+@media desktop {
+  /* 桌面端特定样式 */
+}
+
+@media handheld {
+  /* 移动端特定样式 */
+}
+
+/* ===== 使用示例 ===== */
+/*
+
+// 在HTML中使用:
+<div class="container">
+  <button class="primary-btn">按钮</button>
+  <div class="card-container">卡片内容</div>
+</div>
+
+// 在CSS中定义:
+.container {
+  @flex-col;
+  @items-center;
+  @p(4);
+}
+
+.primary-btn {
+  @btn(#3182ce, white);
+  @mb(4);
+}
+
+.card-container {
+  @card;
+  @w(80%);
+  @text-center;
+}
+
+*/

@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Sciter Tailwind - 功能测试页面</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="sciter-tailwind.css">
+  <style>
+  <style>
+    body {
+      @p(4);
+      @bg-color(#f7fafc);
+    }
+    
+    section {
+      @mb(8);
+      @p(4);
+      @bg-color(white);
+      @rounded(0.5em);
+      @shadow;
+    }
+    
+    h1 {
+      @text-3xl;
+      @font-bold;
+      @text-center;
+      @mb(4);
+      @text-color(#2d3748);
+    }
+    
+    h2 {
+      @text-2xl;
+      @font-bold;
+      @mb(2);
+      @text-color(#3182ce);
+    }
+    
+    .demo-box {
+      @border(1px, #e2e8f0);
+      @p(2);
+      @mb(2);
+      @rounded(0.25em);
+    }
+    
+    .demo-title {
+      @text(@sm);
+      @font-bold;
+      @mb(1);
+      @text-color(#4a5568);
+    }
+    
+    .demo-description {
+      @text(@sm);
+      @mb(2);
+      @text-color(#718096);
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Sciter Tailwind 功能测试页面</h1>
+  
+  <!-- 布局部分 -->
+  <section>
+    <h2>布局 (Layout)</h2>
+    
+    <!-- Flex 布局 -->
+    <div class="demo-box">
+      <div class="demo-title">@flex</div>
+      <div class="demo-description">基础Flex布局</div>
+      <div style="@flex; @border(1px, #cbd5e0); @h(50px); @w(800px);">
+        <div style="@bg-color(#4299e1); @p(2); @text-color(white);">Flex项目1</div>
+        <div style="@bg-color(#48bb78); @p(2); @text-color(white);">Flex项目2</div>
+        <div style="@bg-color(#f56565); @p(2); @text-color(white);">Flex项目3</div>
+      </div>
+    </div>
+    
+    <div class="demo-box">
+      <div class="demo-title">@flex-row</div>
+      <div class="demo-description">水平Flex布局</div>
+      <div style="@flex-row; @border(1px, #cbd5e0); @h(50px); @w(800px);">
+        <div style="@bg-color(#4299e1); @p(2); @text-color(white);">水平项目1</div>
+        <div style="@bg-color(#48bb78); @p(2); @text-color(white);">水平项目2</div>
+        <div style="@bg-color(#f56565); @p(2); @text-color(white);">水平项目3</div>
+      </div>
+    </div>
+    
+    <div class="demo-box">
+      <div class="demo-title">@flex-col</div>
+      <div class="demo-description">垂直Flex布局</div>
+      <div style="@flex-col; @border(1px, #cbd5e0); @h(150px);  @w(800px);">
+        <div style="@bg-color(#4299e1); @p(2); @text-color(white);">垂直项目1</div>
+        <div style="@bg-color(#48bb78); @p(2); @text-color(white);">垂直项目2</div>
+        <div style="@bg-color(#f56565); @p(2); @text-color(white);">垂直项目3</div>
+      </div>
+    </div>
+    
+    <div class="demo-box">
+      <div class="demo-title">@flex-wrap</div>
+      <div class="demo-description">带换行的Flex布局</div>
+      <div style="@flex-wrap; @border(1px, #cbd5e0); @w(300px);">
+        <div style="@bg-color(#4299e1); @p(2); @text-color(white); @w(100px);">Wrap项目1</div>
+        <div style="@bg-color(#48bb78); @p(2); @text-color(white); @w(100px);">Wrap项目2</div>
+        <div style="@bg-color(#f56565); @p(2); @text-color(white); @w(100px);">Wrap项目3</div>
+        <div style="@bg-color(#ed8936); @p(2); @text-color(white); @w(100px);">Wrap项目4</div>
+        <div style="@bg-color(#9f7aea); @p(2); @text-color(white); @w(100px);">Wrap项目5</div>
+      </div>
+    </div>
+    
+    <!-- 对齐方式 -->
+    <div class="demo-box">
+      <div class="demo-title">垂直对齐: @items-start, @items-center, @items-end</div>
+      <div style="@flex-row; @border(1px, #cbd5e0); @h(100px); @w(800px);">
+        <div style="@flex-col;@items-start;@w(33%); @border(1px, #a0aec0);">
+          <div style="@items-start;@h(100px); @bg-color(#4299e1); @p(2); @text-color(white);">顶部对齐</div>
+        </div>
+        <div style="@flex-col;@items-center; @w(33%); @border(1px, #a0aec0);">
+          <div style="@bg-color(#48bb78); @p(2); @text-color(white);">居中对齐</div>
+        </div>
+        <div style="@flex-col;@items-end;@w(33%); @border(1px, #a0aec0);">
+          <div style=" @bg-color(#f56565); @p(2); @text-color(white);">底部对齐</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="demo-box">
+      <div class="demo-title">水平对齐: @justify-start, @justify-center, @justify-end, @justify-between</div>
+      <div style="@flex-col; @border(1px, #cbd5e0); @w(800px);">
+        <div style="@flex-row; @justify-start; @border(1px, #a0aec0); @mb(1);">
+          <div style="@bg-color(#4299e1); @p(2); @text-color(white);">左对齐</div>
+          <div style="@bg-color(#48bb78); @p(2); @text-color(white);">项目</div>
+        </div>
+        <div style="@flex-row; @justify-center; @border(1px, #a0aec0); @mb(1);">
+          <div style="@bg-color(#4299e1); @p(2); @text-color(white);">居中对齐</div>
+          <div style="@bg-color(#48bb78); @p(2); @text-color(white);">项目</div>
+        </div>
+        <div style="@flex-row; @justify-end; @border(1px, #a0aec0); @mb(1);">
+          <div style="@bg-color(#4299e1); @p(2); @text-color(white);">右对齐</div>
+          <div style="@bg-color(#48bb78); @p(2); @text-color(white);">项目</div>
+        </div>
+        <div style="@flex-row; @justify-between; @border(1px, #a0aec0);">
+          <div style="@bg-color(#4299e1); @p(2); @text-color(white);">两端对齐</div>
+          <div style="@bg-color(#48bb78); @p(2); @text-color(white);">项目</div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Grid 布局 -->
+    <div class="demo-box">
+      <div class="demo-title">@grid</div>
+      <div class="demo-description">Grid布局</div>
+      <div style="@grid; @grid-template-columns(1fr 1fr 1fr); @grid-gap(8px); @border(1px, #cbd5e0); @p(2); @w(800px);">
+        <div style="@bg-color(#4299e1); @p(2); @text-color(white); @w(500)">Grid项目1</div>
+        <div style="@bg-color(#48bb78); @p(2); @text-color(white);">Grid项目2</div>
+        <div style="@bg-color(#f56565); @p(2); @text-color(white);">Grid项目3</div>
+        <div style="@bg-color(#ed8936); @p(2); @text-color(white);">Grid项目4</div>
+        <div style="@bg-color(#9f7aea); @p(2); @text-color(white);">Grid项目5</div>
+        <div style="@bg-color(#38b2ac); @p(2); @text-color(white);">Grid项目6</div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- 间距部分 -->
+  <section>
+    <h2>间距 (Spacing)</h2>
+    
+    <!-- Margin -->
+    <div class="demo-box">
+      <div class="demo-title">外边距: @m, @mx, @my, @mt, @mr, @mb, @ml</div>
+      <div style="@border(1px, #cbd5e0); @p(2);@w(800px);">
+        <div style="@bg-color(#4299e1); @text-color(white); @p(2); @m(10);">所有方向外边距10px (@m)</div>
+        <div style="@bg-color(#48bb78); @text-color(white); @p(2); @mx(20);">水平外边距20px (@mx)</div>
+        
+        <div style="@bg-color(#f56565); @text-color(white); @p(2); @my(10);">垂直外边距10px (@my)</div>
+        <div style="@bg-color(#ed8936); @text-color(white); @p(2); @mt(10);">上外边距10px (@mt)</div>
+        <div style="@bg-color(#9f7aea); @text-color(white); @p(2); @mr(20);">右外边距20px (@mr)</div>
+        <div style="@bg-color(#38b2ac); @text-color(white); @p(2); @mb(10);">下外边距10px (@mb)</div>
+        <div style="@bg-color(#4a5568); @text-color(white); @p(2); @ml(10);">左外边距10px (@ml)</div>
+      </div>
+    </div>
+    
+    <!-- Padding -->
+    <div class="demo-box">
+      <div class="demo-title">内边距: @p, @px, @py, @pt, @pr, @pb, @pl</div>
+      <div style="@border(1px, #cbd5e0); @w(800px);">
+        <div style="@bg-color(#4299e1); @text-color(white); @p(10); @mb(2);">所有方向内边距 (@p)</div>
+        <div style="@bg-color(#48bb78); @text-color(white); @px(20); @mb(2);">水平内边距 (@px)</div>
+        <div style="@bg-color(#f56565); @text-color(white); @py(10); @mb(2);">垂直内边距 (@py)</div>
+        <div style="@bg-color(#ed8936); @text-color(white); @pt(10); @mb(2);">上内边距 (@pt)</div>
+        <div style="@bg-color(#9f7aea); @text-color(white); @pr(10); @mb(2);">右内边距 (@pr)</div>
+        <div style="@bg-color(#38b2ac); @text-color(white); @pb(10); @mb(2);">下内边距 (@pb)</div>
+        <div style="@bg-color(#4a5568); @text-color(white); @pl(10);">左内边距 (@pl)</div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- 颜色常量部分 -->
+  <section>
+    <h2>颜色常量 (Color Constants)</h2>
+    
+    <!-- 基础颜色 -->
+    <div class="demo-box">
+      <div class="demo-title">基础颜色: transparent, white, black</div>
+      <div style="@flex-row; @w(800px);">
+        <div style="@w(33%); @p(2); @border(1px, #cbd5e0); @text-center;">
+          <div style="@bg-color(@transparent); @border(1px, #cbd5e0); @p(4);">transparent</div>
+          <div class="demo-description">@transparent</div>
+        </div>
+        <div style="@w(33%); @p(2); @border(1px, #cbd5e0); @text-center;">
+          <div style="@bg-color(@white); @border(1px, #cbd5e0); @p(4);">white</div>
+          <div class="demo-description">@white</div>
+        </div>
+        <div style="@w(33%); @p(2); @border(1px, #cbd5e0); @text-center;">
+          <div style="@bg-color(@black); @text-color(white); @p(4);">black</div>
+          <div class="demo-description">@black</div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- 灰色系列 -->
+    <div class="demo-box">
+      <div class="demo-title">灰色系列: gray-100 ~ gray-900</div>
+      <div style="@flex-wrap; @w(800px);">
+        <div style="@w(20%); @p(2); @text-center;">
+          <div style="@bg-color(@gray-100); @border(1px, #cbd5e0); @p(4);">GRAY_100</div>
+          <div class="demo-description">@gray-100</div>
+        </div>
+        <div style="@w(20%); @p(2); @text-center;">
+          <div style="@bg-color(@gray-200); @border(1px, #cbd5e0); @p(4);">GRAY_200</div>
+          <div class="demo-description">@gray-200</div>
+        </div>
+        <div style="@w(20%); @p(2); @text-center;">
+          <div style="@bg-color(@gray-300); @border(1px, #cbd5e0); @p(4);">GRAY_300</div>
+          <div class="demo-description">@gray-300</div>
+        </div>
+        <div style="@w(20%); @p(2); @text-center;">
+          <div style="@bg-color(@gray-400); @border(1px, #cbd5e0); @p(4);">GRAY_400</div>
+          <div class="demo-description">@gray-400</div>
+        </div>
+        <div style="@w(20%); @p(2); @text-center;">
+          <div style="@bg-color(@gray-500); @border(1px, #cbd5e0); @p(4);">GRAY_500</div>
+          <div class="demo-description">@gray-500</div>
+        </div>
+        <div style="@w(20%); @p(2); @text-center;">
+          <div style="@bg-color(@gray-600); @text-color(white); @p(4);">GRAY_600</div>
+          <div class="demo-description">@gray-600</div>
+        </div>
+        <div style="@w(20%); @p(2); @text-center;">
+          <div style="@bg-color(@gray-700); @text-color(white); @p(4);">GRAY_700</div>
+          <div class="demo-description">@gray-700</div>
+        </div>
+        <div style="@w(20%); @p(2); @text-center;">
+          <div style="@bg-color(@gray-800); @text-color(white); @p(4);">GRAY_800</div>
+          <div class="demo-description">@gray-800</div>
+        </div>
+        <div style="@w(20%); @p(2); @text-center;">
+          <div style="@bg-color(@gray-900); @text-color(white); @p(4);">GRAY_900</div>
+          <div class="demo-description">@gray-900</div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- 红色系列 -->
+    <div class="demo-box">
+      <div class="demo-title">红色系列: red-500 ~ red-700</div>
+      <div style="@flex-row; @w(800px);">
+        <div style="@w(33%); @p(2); @text-center;">
+          <div style="@bg-color(@red-500); @text-color(white); @p(4);">RED_500</div>
+          <div class="demo-description">@red-500</div>
+        </div>
+        <div style="@w(33%); @p(2); @text-center;">
+          <div style="@bg-color(@red-600); @text-color(white); @p(4);">RED_600</div>
+          <div class="demo-description">@red-600</div>
+        </div>
+        <div style="@w(33%); @p(2); @text-center;">
+          <div style="@bg-color(@red-700); @text-color(white); @p(4);">RED_700</div>
+          <div class="demo-description">@red-700</div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- 绿色系列 -->
+    <div class="demo-box">
+      <div class="demo-title">绿色系列: green-500 ~ green-700</div>
+      <div style="@flex-row; @w(800px);">
+        <div style="@w(33%); @p(2); @text-center;">
+          <div style="@bg-color(@green-500); @text-color(white); @p(4);">GREEN_500</div>
+          <div class="demo-description">@green-500</div>
+        </div>
+        <div style="@w(33%); @p(2); @text-center;">
+          <div style="@bg-color(@green-600); @text-color(white); @p(4);">GREEN_600</div>
+          <div class="demo-description">@green-600</div>
+        </div>
+        <div style="@w(33%); @p(2); @text-center;">
+          <div style="@bg-color(@green-700); @text-color(white); @p(4);">GREEN_700</div>
+          <div class="demo-description">@green-700</div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- 蓝色系列 -->
+    <div class="demo-box">
+      <div class="demo-title">蓝色系列: blue-500 ~ blue-700</div>
+      <div style="@flex-row; @w(800px);">
+        <div style="@w(33%); @p(2); @text-center;">
+          <div style="@bg-color(@blue-500); @text-color(white); @p(4);">BLUE_500</div>
+          <div class="demo-description">@blue-500</div>
+        </div>
+        <div style="@w(33%); @p(2); @text-center;">
+          <div style="@bg-color(@blue-600); @text-color(white); @p(4);">BLUE_600</div>
+          <div class="demo-description">@blue-600</div>
+        </div>
+        <div style="@w(33%); @p(2); @text-center;">
+          <div style="@bg-color(@blue-700); @text-color(white); @p(4);">BLUE_700</div>
+          <div class="demo-description">@blue-700</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- 尺寸部分 -->
+  <section>
+    <h2>尺寸 (Sizing)</h2>
+    
+    <div class="demo-box">
+      <div class="demo-title">宽度和高度: @w, @h, @min-w, @min-h, @max-w, @max-h, @w-full, @h-full</div>
+      <div style="@border(1px, #cbd5e0); @p(2); @w(800px);">
+        <div style="@bg-color(#4299e1); @text-color(white); @p(2); @w(200px); @mb(2);">固定宽度200px (@w)</div>
+        <div style="@bg-color(#48bb78); @text-color(white); @p(2); @h(50px); @mb(2);">固定高度50px (@h)</div>
+        <div style="@bg-color(#f56565); @text-color(white); @p(2); @min-w(150px); @mb(2);">最小宽度150px (@min-w)</div>
+        <div style="@bg-color(#ed8936); @text-color(white); @p(2); @min-h(60px); @mb(2);">最小高度60px (@min-h)</div>
+        <div style="@bg-color(#9f7aea); @text-color(white); @p(2); @max-w(400px); @mb(2);">最大宽度400px (@max-w)</div>
+        <div style="@bg-color(#38b2ac); @text-color(white); @p(2); @max-h(80px); @mb(2);">最大高度80px (@max-h)</div>
+        <div style="@bg-color(#4a5568); @text-color(white); @p(2); @w-full; @mb(2);">100%宽度 (@w-full)</div>
+        <div style="@bg-color(#718096); @text-color(white); @p(2); @h-full;">100%高度 (@h-full)</div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- 文本部分 -->
+  <section>
+    <h2>文本 (Typography)</h2>
+    
+    <div class="demo-box">
+      <div class="demo-title">字体大小: @text</div>
+      <div style="@border(1px, #cbd5e0); @p(2);@w(800px);">
+        <div style="@text(@sm); @mb(1);">小字体 (@text(@sm))</div>
+        <div style="@text(@base); @mb(1);">基础字体 (@text(@base))</div>
+        <div style="@text(@lg); @mb(1);">大字体 (@text(@lg))</div>
+        <div style="@text-xl; @mb(1);">字体 (@text-xl)</div>
+        <div style="@text-2xl; @mb(1);">2倍大字体 (@text-2xl)</div>
+        <div style="@text-3xl; @mb(1);">3倍大字体 (@text-3xl)</div>
+        <div style="@text-4xl; @mb(1);">4倍大字体 (@text-4xl)</div>
+      </div>
+    </div>
+    
+    <div class="demo-box">
+      <div class="demo-title">字体样式: @font-bold, @font-normal</div>
+      <div style="@border(1px, #cbd5e0); @p(2);">
+        <div style="@font-normal; @mb(2);">正常字重 (@font-normal)</div>
+        <div style="@font-bold;">粗体字重 (@font-bold)</div>
+      </div>
+    </div>
+    
+    <div class="demo-box">
+      <div class="demo-title">文本对齐: @text-left, @text-center, @text-right</div>
+      <div style="@border(1px, #cbd5e0); @p(2);@w(800px);">
+        <div style="@text-left; @mb(2);">左对齐文本 (@text-left)</div>
+        <div style="@text-center; @mb(2);">居中对齐文本 (@text-center)</div>
+        <div style="@text-right;">右对齐文本 (@text-right)</div>
+      </div>
+    </div>
+    
+    <div class="demo-box">
+      <div class="demo-title">文本颜色: @text-color</div>
+      <div style="@border(1px, #cbd5e0); @p(2);@w(800px);">
+        <div style="@text-color(#4299e1); @mb(1);">蓝色文本 (@text-color(#4299e1))</div>
+        <div style="@text-color(#48bb78); @mb(1);">绿色文本 (@text-color(#48bb78))</div>
+        <div style="@text-color(#f56565); @mb(1);">红色文本 (@text-color(#f56565))</div>
+        <div style="@text-color(#ed8936);">橙色文本 (@text-color(#ed8936))</div>
+      </div>
+    </div>
+    
+    <div class="demo-box">
+      <div class="demo-title">文本截断: @truncate</div>
+      <div style="@border(1px, #cbd5e0); @p(2); @w(200px);">
+        <div style="@truncate;">这是一段很长的文本，将会被截断并显示省略号，因为使用了@truncate混合器，当文本超出容器宽度时会自动截断。</div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- 背景和边框部分 -->
+  <section>
+    <h2>背景和边框 (Background & Border)</h2>
+    
+    <div class="demo-box">
+      <div class="demo-title">背景颜色: @bg-color</div>
+      <div style="@border(1px, #cbd5e0); @p(2);@w(800px);">
+        <div style="@bg-color(#4299e1); @text-color(white); @p(2); @mb(2);">蓝色背景 (@bg-color(#4299e1))</div>
+        <div style="@bg-color(#48bb78); @text-color(white); @p(2); @mb(2);">绿色背景 (@bg-color(#48bb78))</div>
+        <div style="@bg-color(#f56565); @text-color(white); @p(2); @mb(2);">红色背景 (@bg-color(#f56565))</div>
+        <div style="@bg-color(#ed8936); @text-color(white); @p(2);">橙色背景 (@bg-color(#ed8936))</div>
+      </div>
+    </div>
+    
+    <div class="demo-box">
+      <div class="demo-title">圆角: @rounded, @rounded-full</div>
+      <div style="@border(1px, #cbd5e0); @p(2);@w(800px);">
+        <div style="@bg-color(#4299e1); @text-color(white); @p(2); @mb(2); @rounded(0.25em);">小圆角 (@rounded(0.25em))</div>
+        <div style="@bg-color(#48bb78); @text-color(white); @p(2); @mb(2); @rounded(0.5em);">中圆角 (@rounded(0.5em))</div>
+        <div style="@bg-color(#f56565); @text-color(white); @p(2); @mb(2); @rounded(1em);">大圆角 (@rounded(1em))</div>
+        <div style="@bg-color(#ed8936); @text-color(white); @p(2); @w(200px); @rounded-full;">完全圆角 (@rounded-full)</div>
+      </div>
+    </div>
+    
+    <div class="demo-box">
+      <div class="demo-title">边框: @border</div>
+      <div style="@p(2);@w(800px);">
+        <div style="@p(2); @mb(2); @border(1px, #4299e1);">细蓝色边框 (@border(1px, #4299e1))</div>
+        <div style="@p(2); @mb(2); @border(2px, #48bb78);">中绿色边框 (@border(2px, #48bb78))</div>
+        <div style="@p(2); @border(4px, #f56565);">粗红色边框 (@border(4px, #f56565))</div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- 阴影部分 -->
+  <section>
+    <h2>阴影 (Shadow)</h2>
+    
+    <div class="demo-box">
+      <div class="demo-title">阴影效果: @shadow-sm, @shadow, @shadow-md, @shadow-lg</div>
+      <div style="@border(1px, #cbd5e0); @p(2);@w(800px);">
+        <div style="@bg-color(white); @p(4); @mb(4); @shadow-sm;">小阴影 (@shadow-sm)</div>
+        <div style="@bg-color(white); @p(4); @mb(4); @shadow;">中等阴影 (@shadow)</div>
+        <div style="@bg-color(white); @p(4); @mb(4); @shadow-md;">中大阴影 (@shadow-md)</div>
+        <div style="@bg-color(white); @p(4); @shadow-lg;">大阴影 (@shadow-lg)</div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- 交互部分 -->
+  <section>
+    <h2>交互 (Interaction)</h2>
+    
+    <div class="demo-box">
+      <div class="demo-title">悬停效果: @hover-opacity</div>
+      <div style="@border(1px, #cbd5e0); @p(2);@w(800px);">
+        <div style="@bg-color(#4299e1); @text-color(white); @p(2); @hover-opacity;">悬停时降低不透明度 (@hover-opacity)</div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- 组件部分 -->
+  <section>
+    <h2>组件 (Components)</h2>
+    
+    <div class="demo-box">
+      <div class="demo-title">按钮: @btn</div>
+      <div style="@border(1px, #cbd5e0); @p(2); @w(800px);">
+        <div style="@btn(#48bb78, white); @mb(2); @h(20); @w(60);">绿色按钮</div>                                                   
+        <div style="@btn(#f56565, white); @mb(2); @h(20); @w(60);">红色按钮</div>
+        <div style="@btn(#ed8936, white); @h(20); @w(60);">橙色按钮</div>
+      </div>
+    </div>
+    
+    <div class="demo-box">
+      <div class="demo-title">卡片: @card</div>
+      <div style="@border(1px, #cbd5e0); @p(2);@w(800px);">
+        <div style="@card; @mb(2);">
+          <h3 style="@font-bold; @mb(2);">卡片标题</h3>
+          <p>这是一个使用@card混合器创建的卡片组件，它自带阴影、圆角和内边距。</p>
+        </div>
+        
+        <div style="@card; @bg-color(#ebf8ff);">
+          <h3 style="@font-bold; @mb(2); @text-color(#3182ce);">蓝色卡片</h3>
+          <p style="@text-color(#4a5568);">这是一个自定义背景色的卡片组件。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+  <!-- Box-sizing 测试部分 -->
+  <section>
+    <h2>Box-sizing (盒模型)</h2>
+    
+    <div class="demo-box">
+      <div class="demo-title">box-sizing: border-box 测试</div>
+      <div class="demo-description">验证所有元素默认使用 border-box 盒模型</div>
+      
+      <div style="@flex-row; @justify-between; @w(800px);">
+        <div>
+          <div class="demo-title">border-box 模式 (当前默认)</div>
+          <div style="@bg-color(#4299e1); @text-color(white); @p(20); @border(10px, #3182ce); @w(200px); @h(200px); @text-center;">
+            宽高: 200px<br>
+            内边距: 20px<br>
+            边框: 10px<br>
+            <br>
+            在 border-box 模式下<br>
+            内容区域宽高为 140px<br>
+            (200px - 2*20px - 2*10px)
+          </div>
+        </div>
+        
+        <div>
+          <div class="demo-title">content-box 模式 (对比)</div>
+          <div style="@bg-color(#48bb78); @text-color(white); @p(20); @border(10px, #38a169); @w(200px); @h(200px); @text-center; box-sizing: content-box;">
+            宽高: 200px<br>
+            内边距: 20px<br>
+            边框: 10px<br>
+            <br>
+            在 content-box 模式下<br>
+            实际占用宽高为 260px<br>
+            (200px + 2*20px + 2*10px)
+          </div>
+        </div>
+        
+      </div>
+      
+      <div style="@mt(4); @p(2); @border(1px, #e2e8f0); @rounded(0.25em);">
+        <div class="demo-title">盒模型说明</div>
+        <div style="@flex-row; @justify-between;">
+          <div style="@w(48%);">
+            <p style="@font-bold; @text-color(#3182ce);">border-box 模式 (Sciter Tailwind 默认):</p>
+            <ul>
+              <li>元素的宽高包含内边距和边框</li>
+              <li>设置 width:200px 的元素，实际内容区域宽度 = 200px - 内边距 - 边框</li>
+              <li>这使得布局更加直观，不需要计算内边距和边框的额外宽度</li>
+              <li>与现代CSS框架（如Bootstrap、Tailwind CSS）保持一致</li>
+            </ul>
+          </div>
+          <div style="@w(48%);">
+            <p style="@font-bold; @text-color(#38a169);">content-box 模式 (传统模式):</p>
+            <ul>
+              <li>元素的宽高只包含内容区域</li>
+              <li>设置 width:200px 的元素，实际占用宽度 = 200px + 内边距 + 边框</li>
+              <li>这使得布局计算更加复杂</li>
+              <li>是CSS的传统默认值，但在现代Web开发中较少使用</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </section>
+</body>
+
+</html>
